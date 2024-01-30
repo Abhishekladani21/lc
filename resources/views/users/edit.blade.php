@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ url('users/update/' . $users->id) }}" method="post">
+        <form action="{{ url('users/update/' . $user->id) }}" method="post">
             @csrf
             <h3 class="ml-3">Edit Employee</h3>
             <div class="card-body card-block mt-4">

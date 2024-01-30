@@ -86,12 +86,9 @@ class EmployeeController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'dob' => $request->dob,
-            'address' => $request->address,
             'phone_no' => $request->phone_no,
-            // 'profile'=>[
-            //     File::image()
-            //         ->max('10mb')
-            // ],
+            'address' =>  $request->address,
+            // 'profile' => 'photos/' . $profileName
         ]);
 
         // $profile = $request->file('profile');
@@ -101,16 +98,8 @@ class EmployeeController extends Controller
         //     $profile->move('photos', $profileName);
         // }
 
-        employee::where('id', $id)->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'dob' => $request->dob,
-            'phone_no' => $request->phone_no,
-            'address' =>  $request->address,
-            // 'profile' => 'photos/' . $profileName
-        ]);
         return redirect(url('users/index'));
-    }   
+    }
 
     //#################################################################_delete_###########################################################################
 
